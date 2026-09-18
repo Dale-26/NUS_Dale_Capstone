@@ -70,10 +70,6 @@ This localhost mock-up is not a production service. Predictions assume supplied 
 
 Each module uses `logging.getLogger(__name__)`. Entry points configure console and file handlers, with timestamp, level, module and message. Files include `capstone_part2/pipeline.log`, `capstone_part2/app.log`, `capstone_part1/analysis.log`, `capstone_part3/training.log` and `capstone_part3/api.log`. DEBUG records internal thresholds; INFO records milestones; WARNING records affected-row counts and recoverable changes; ERROR records failures. `--debug` enables detailed pipeline output. Only direct CLI answers use print.
 
-## Power BI verification still required
-
-Open `capstone_part1/powerbi/Traffic.pbip` in Power BI Desktop on Windows, set DataFile to the raw CSV location, refresh, and check all visuals and filters. The package contains native report/model definitions, Power Query and DAX; **Desktop rendering/refresh is not verified and no verified PBIX is claimed**. Confirm this component before final submission. Microsoft documents PBIR external editing at https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report.
-
 ## Data assumptions and responsible use
 
 Raw SQL/statistical results preserve record weighting; the model table consolidates repeated hours using severity-prioritised weather. Volume is neither speed nor observed congestion delay. The fixed dashboard threshold (>5,500) differs intentionally from training-derived quartile labels. The proxy accident label is unsuitable for safety, enforcement or individual decisions. See the bias report for coverage, subgroup error and governance limitations. 
