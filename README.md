@@ -6,6 +6,15 @@ Capstone portfolio covering SQL analytics, a logged Python pipeline, machine lea
 
 The validation-selected random forest achieved held-out 2018 MAE **228.62 vehicles/hour** and R² **0.9617**. The linear baseline MAE was 803.61 and the two-hidden-layer neural network MAE was 271.29. Forest proxy-classification F1 was 0.9319. Snow demand error was materially higher than Clear, so overall metrics must not obscure adverse-weather limitations.
 
+## Clone and run
+
+```bash
+git clone https://github.com/Dale-26/NUS_Dale_Capstone.git
+cd NUS_Dale_Capstone
+```
+
+The source, data, reports and models are available directly in the folders below. No archive extraction is needed after cloning. `NUS_Dale_Capstone.zip` is an optional snapshot; the repository folders contain the complete project, including deployment and MLflow artifacts.
+
 ## Reproduce
 
 Tested with Python 3.9, NumPy 1.26.4 and pinned dependencies. A recent Python 3.9-compatible environment is needed for the exact lockfile; resolve equivalent packages if using a newer Python version.
