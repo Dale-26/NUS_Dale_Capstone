@@ -1,0 +1,4 @@
+                mean  count
+weekend                    
+Weekday  3557.440457  28979
+Weekend  2623.928596  11596

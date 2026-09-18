@@ -1,0 +1,24 @@
+2026-09-18 15:13:35,287 WARNING matplotlib.font_manager Matplotlib is building the font cache; this may take a moment.
+2026-09-18 15:13:38,312 INFO __main__ Loaded 48204 rows and 9 columns; schema validated
+2026-09-18 15:13:38,322 INFO __main__ holiday categorical standardisation: 0 rows modified
+2026-09-18 15:13:38,333 INFO __main__ weather_main categorical standardisation: 0 rows modified
+2026-09-18 15:13:38,343 WARNING __main__ weather_description categorical standardisation: 1730 rows modified
+2026-09-18 15:13:38,349 INFO __main__ Invalid date removal: 0 rows
+2026-09-18 15:13:38,366 WARNING __main__ Exact duplicate removal: 17 rows
+2026-09-18 15:13:38,369 INFO __main__ Invalid traffic target removal: 0 rows
+2026-09-18 15:13:38,378 WARNING __main__ temp month 1: imputed 4 missing/impossible rows with reference median 266.83
+2026-09-18 15:13:38,379 WARNING __main__ temp month 2: imputed 6 missing/impossible rows with reference median 266.51
+2026-09-18 15:13:38,384 INFO __main__ temp range validation complete; 10 affected rows
+2026-09-18 15:13:38,394 WARNING __main__ rain_1h month 7: imputed 1 missing/impossible rows with reference median 0.0
+2026-09-18 15:13:38,397 INFO __main__ rain_1h range validation complete; 1 affected rows
+2026-09-18 15:13:38,410 INFO __main__ snow_1h range validation complete; 0 affected rows
+2026-09-18 15:13:38,423 INFO __main__ clouds_all range validation complete; 0 affected rows
+2026-09-18 15:13:38,523 WARNING __main__ Collapsed 7612 repeated timestamp records into 40575 distinct observed hours
+2026-09-18 15:13:38,531 INFO capstone_part2.feature_engineering Before feature engineering: 40575 rows, 10 columns
+2026-09-18 15:13:38,540 DEBUG capstone_part2.feature_engineering Reference quartiles: [1248.5, 3427.0, 4952.0]; scaling parameters: {'temp': [281.3811489833641, 13.095129691329147], 'clouds_all': [44.20460874922982, 38.683783930821505]}
+2026-09-18 15:13:38,554 INFO capstone_part2.feature_engineering After feature engineering: 40575 rows, 38 columns
+2026-09-18 15:13:38,806 INFO __main__ Saved cleaned record and engineered hourly data
+2026-09-18 15:13:39,188 INFO capstone_part2.visualizations Figure saved: capstone_part2/figures/hourly.png
+2026-09-18 15:13:39,245 INFO capstone_part2.visualizations Figure saved: capstone_part2/figures/weather.png
+2026-09-18 15:13:39,337 INFO capstone_part2.visualizations Figure saved: capstone_part2/figures/temperature.png
+2026-09-18 15:13:39,410 INFO capstone_part2.visualizations Figure saved: capstone_part2/figures/distribution.png

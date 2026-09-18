@@ -1,0 +1,56 @@
+2026-09-18 15:20:23,608 INFO capstone_part2.pipeline Loaded 48204 rows and 9 columns; schema validated
+2026-09-18 15:20:23,621 INFO capstone_part2.pipeline holiday categorical standardisation: 0 rows modified
+2026-09-18 15:20:23,628 INFO capstone_part2.pipeline weather_main categorical standardisation: 0 rows modified
+2026-09-18 15:20:23,635 WARNING capstone_part2.pipeline weather_description categorical standardisation: 1634 rows modified
+2026-09-18 15:20:23,637 INFO capstone_part2.pipeline Invalid date removal: 0 rows
+2026-09-18 15:20:23,648 WARNING capstone_part2.pipeline Exact duplicate removal: 7 rows
+2026-09-18 15:20:23,650 INFO capstone_part2.pipeline Invalid traffic target removal: 0 rows
+2026-09-18 15:20:23,656 WARNING capstone_part2.pipeline temp month 1: imputed 4 missing/impossible rows with reference median 265.08
+2026-09-18 15:20:23,657 WARNING capstone_part2.pipeline temp month 2: imputed 6 missing/impossible rows with reference median 265.35
+2026-09-18 15:20:23,660 INFO capstone_part2.pipeline temp range validation complete; 10 affected rows
+2026-09-18 15:20:23,669 WARNING capstone_part2.pipeline rain_1h month 7: imputed 1 missing/impossible rows with reference median 0.0
+2026-09-18 15:20:23,671 INFO capstone_part2.pipeline rain_1h range validation complete; 1 affected rows
+2026-09-18 15:20:23,681 INFO capstone_part2.pipeline snow_1h range validation complete; 0 affected rows
+2026-09-18 15:20:23,691 INFO capstone_part2.pipeline clouds_all range validation complete; 0 affected rows
+2026-09-18 15:20:23,702 WARNING capstone_part2.pipeline Collapsed 4314 repeated timestamp records into 25329 distinct observed hours
+2026-09-18 15:20:23,709 INFO capstone_part2.feature_engineering Before feature engineering: 25329 rows, 10 columns
+2026-09-18 15:20:23,727 INFO capstone_part2.feature_engineering After feature engineering: 25329 rows, 38 columns
+2026-09-18 15:20:23,730 INFO capstone_part2.pipeline holiday categorical standardisation: 0 rows modified
+2026-09-18 15:20:23,732 INFO capstone_part2.pipeline weather_main categorical standardisation: 0 rows modified
+2026-09-18 15:20:23,735 WARNING capstone_part2.pipeline weather_description categorical standardisation: 83 rows modified
+2026-09-18 15:20:23,736 INFO capstone_part2.pipeline Invalid date removal: 0 rows
+2026-09-18 15:20:23,740 WARNING capstone_part2.pipeline Exact duplicate removal: 9 rows
+2026-09-18 15:20:23,741 INFO capstone_part2.pipeline Invalid traffic target removal: 0 rows
+2026-09-18 15:20:23,748 INFO capstone_part2.pipeline temp range validation complete; 0 affected rows
+2026-09-18 15:20:23,755 INFO capstone_part2.pipeline rain_1h range validation complete; 0 affected rows
+2026-09-18 15:20:23,762 INFO capstone_part2.pipeline snow_1h range validation complete; 0 affected rows
+2026-09-18 15:20:23,769 INFO capstone_part2.pipeline clouds_all range validation complete; 0 affected rows
+2026-09-18 15:20:23,774 WARNING capstone_part2.pipeline Collapsed 1883 repeated timestamp records into 8713 distinct observed hours
+2026-09-18 15:20:23,776 INFO capstone_part2.feature_engineering Before feature engineering: 8713 rows, 10 columns
+2026-09-18 15:20:23,786 INFO capstone_part2.feature_engineering After feature engineering: 8713 rows, 38 columns
+2026-09-18 15:20:23,788 INFO capstone_part2.pipeline holiday categorical standardisation: 0 rows modified
+2026-09-18 15:20:23,790 INFO capstone_part2.pipeline weather_main categorical standardisation: 0 rows modified
+2026-09-18 15:20:23,792 WARNING capstone_part2.pipeline weather_description categorical standardisation: 13 rows modified
+2026-09-18 15:20:23,793 INFO capstone_part2.pipeline Invalid date removal: 0 rows
+2026-09-18 15:20:23,797 WARNING capstone_part2.pipeline Exact duplicate removal: 1 rows
+2026-09-18 15:20:23,798 INFO capstone_part2.pipeline Invalid traffic target removal: 0 rows
+2026-09-18 15:20:23,805 INFO capstone_part2.pipeline temp range validation complete; 0 affected rows
+2026-09-18 15:20:23,812 INFO capstone_part2.pipeline rain_1h range validation complete; 0 affected rows
+2026-09-18 15:20:23,819 INFO capstone_part2.pipeline snow_1h range validation complete; 0 affected rows
+2026-09-18 15:20:23,826 INFO capstone_part2.pipeline clouds_all range validation complete; 0 affected rows
+2026-09-18 15:20:23,831 WARNING capstone_part2.pipeline Collapsed 1415 repeated timestamp records into 6533 distinct observed hours
+2026-09-18 15:20:23,832 INFO capstone_part2.feature_engineering Before feature engineering: 6533 rows, 10 columns
+2026-09-18 15:20:23,840 INFO capstone_part2.feature_engineering After feature engineering: 6533 rows, 38 columns
+2026-09-18 15:20:24,361 INFO __main__ Experiment initialized; training begins
+2026-09-18 15:20:24,493 INFO __main__ Trained ridge in 0.09s; metrics {'model': 'ridge', 'version': 'v1', 'train_seconds': 0.09335741599999992, 'train_rows': 25329, 'validation_rows': 8713, 'test_rows': 6533, 'run_id': '5ecd14ae1202431eafd31db34af97856', 'validation_mae': 802.1834812755502, 'validation_r2': 0.7298359725602511, 'test_mae': 803.608402802801, 'test_r2': 0.734737783550372}
+2026-09-18 15:20:25,905 INFO __main__ Trained forest_regression in 0.96s; metrics {'model': 'forest_regression', 'version': 'v1', 'train_seconds': 0.9566820419999997, 'train_rows': 25329, 'validation_rows': 8713, 'test_rows': 6533, 'run_id': '305404f849c44ae38eced3ba7871ce17', 'validation_mae': 238.84076069357644, 'validation_r2': 0.9637171561719432, 'test_mae': 228.6160324464198, 'test_r2': 0.9617496148360386}
+2026-09-18 15:20:26,065 INFO __main__ Trained logistic in 0.10s; metrics {'model': 'logistic', 'version': 'v1', 'train_seconds': 0.09619716700000014, 'train_rows': 25329, 'validation_rows': 8713, 'test_rows': 6533, 'run_id': '6ed971ac3bc04d23b1ae38b17a0e518a', 'validation_accuracy': 0.9701595317341903, 'validation_precision': 0.8008097165991903, 'validation_recall': 0.9860418743768694, 'validation_f1': 0.8838248436103664, 'validation_roc_auc': 0.9970978116234953, 'test_accuracy': 0.9580590846471759, 'test_precision': 0.729483282674772, 'test_recall': 0.9903713892709766, 'test_f1': 0.8401400233372228, 'test_roc_auc': 0.9939769654405797}
+2026-09-18 15:20:26,496 INFO __main__ Trained forest_classifier in 0.28s; metrics {'model': 'forest_classifier', 'version': 'v1', 'train_seconds': 0.27640704100000013, 'train_rows': 25329, 'validation_rows': 8713, 'test_rows': 6533, 'run_id': 'b727e35d0cdd4160a919ffaebfbe6fb8', 'validation_accuracy': 0.9911626305520487, 'validation_precision': 0.9486434108527132, 'validation_recall': 0.9760717846460618, 'validation_f1': 0.9621621621621622, 'validation_roc_auc': 0.9991273908495009, 'test_accuracy': 0.9839277514158886, 'test_precision': 0.8820638820638821, 'test_recall': 0.9876203576341128, 'test_f1': 0.9318624269954575, 'test_roc_auc': 0.9968575883886184}
+2026-09-18 15:20:29,040 INFO __main__ Trained neural_network in 2.51s; metrics {'model': 'neural_network', 'version': 'v1', 'train_seconds': 2.5098548340000004, 'train_rows': 25329, 'validation_rows': 8713, 'test_rows': 6533, 'run_id': '68b7b0012a914e4da78af913059b0850', 'validation_mae': 282.08621992335344, 'validation_r2': 0.9531348546352332, 'test_mae': 271.2878361224591, 'test_r2': 0.9527646560582468}
+2026-09-18 15:20:39,212 INFO __main__ Saved SHAP explanation figure
+2026-09-18 15:20:39,263 INFO capstone_part3.monitor Monitoring {'status': 'PASS', 'mae': 228.61603244641978, 'reference_validation_mae': 238.84076069357644, 'mae_threshold': 298.55095086697054, 'ks_statistics': {'temp': 0.12512880167892115, 'hour': 0.00375776048490703, 'clouds_all': 0.1006482291392134}, 'ks_threshold': 0.2}
+2026-09-18 15:20:39,281 WARNING capstone_part3.monitor Monitoring {'status': 'ALERT', 'mae': 2987.2601554395833, 'reference_validation_mae': 238.84076069357644, 'mae_threshold': 298.55095086697054, 'ks_statistics': {'temp': 0.12512880167892115, 'hour': 0.00375776048490703, 'clouds_all': 0.1006482291392134}, 'ks_threshold': 0.2}
+2026-09-18 15:20:39,862 INFO capstone_part3.unsupervised Saved clustering profiles and 39 association rules
+2026-09-18 15:20:39,865 INFO capstone_part3.recommend Recommended hour=21 day_type=weekday weather=Clear support=278
+2026-09-18 15:20:39,867 INFO capstone_part3.recommend Recommended hour=6 day_type=weekend weather=Clear support=96
+2026-09-18 15:20:39,868 INFO capstone_part3.recommend Recommended hour=21 day_type=weekday weather=Rain support=72

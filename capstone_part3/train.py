@@ -32,6 +32,11 @@ def run():
     pd.concat(frames).to_csv(out/'evaluation_data.csv',index=False)
     mlflow.set_tracking_uri('sqlite:///'+str((out/'mlflow.db').resolve()))
     mlflow.set_experiment('traffic-intelligence-chronological')
+    # MLflow database migration logging can disable previously constructed loggers.
+    for item in logging.root.manager.loggerDict.values():
+        if isinstance(item,logging.Logger): item.disabled=False
+    configure_logging('capstone_part3/training.log',mode='a')
+    logger.info('Experiment initialized; training begins')
     specs=[('ridge',Ridge(alpha=10),False),('forest_regression',RandomForestRegressor(n_estimators=120,max_depth=16,min_samples_leaf=4,n_jobs=-1,random_state=42),False),('logistic',LogisticRegression(max_iter=1000,class_weight='balanced'),True),('forest_classifier',RandomForestClassifier(n_estimators=120,max_depth=16,min_samples_leaf=4,class_weight='balanced',n_jobs=-1,random_state=42),True),('neural_network',MLPRegressor(hidden_layer_sizes=(64,32),max_iter=100,early_stopping=False,random_state=42,batch_size=256),False)]
     rows=[];fitted={}
     for name,model,classification in specs:
@@ -81,6 +86,8 @@ def run():
     (out/'recommendations.txt').write_text('\n\n'.join(recommend(train,d,w) for d,w in [('weekday','Clear'),('weekend','Clear'),('weekday','Rain')]))
 if __name__=='__main__':
     configure_logging('capstone_part3/training.log')
-    try:run()
+    try:
+        from threadpoolctl import threadpool_limits
+        with threadpool_limits(limits=2): run()
     except Exception as e:
         logger.error('Training failed: %s',e,exc_info=True);raise SystemExit(1)

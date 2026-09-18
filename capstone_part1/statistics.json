@@ -1,0 +1,36 @@
+{
+  "rows": 48204,
+  "columns": 9,
+  "missing": {
+    "holiday": 0,
+    "temp": 0,
+    "rain_1h": 0,
+    "snow_1h": 0,
+    "clouds_all": 0,
+    "weather_main": 0,
+    "weather_description": 0,
+    "date_time": 0,
+    "traffic_volume": 0
+  },
+  "unique_hours": 40575,
+  "mean": 3259.8183553232097,
+  "median": 3380.0,
+  "sample_std": 1986.8606704463589,
+  "sample_variance": 3947615.3237665547,
+  "range": 7280,
+  "temperature_correlation_raw": 0.13029879817112616,
+  "temperature_correlation_clean_hourly": 0.13944366564682834,
+  "p_congestion": 0.1472906812712638,
+  "p_clear": 0.277798522944154,
+  "p_congestion_and_clear": 0.03657372832130114,
+  "p_clear_given_congestion": 0.2483098591549296,
+  "p_high_temp_given_congestion": 0.26295774647887327,
+  "independence_product": 0.04091713370059525,
+  "odds_cells": {
+    "clear_congested": 1763,
+    "clear_other": 11628,
+    "clouds_congested": 2592,
+    "clouds_other": 12572
+  },
+  "odds_ratio_clear_clouds": 0.7353882125733118
+}

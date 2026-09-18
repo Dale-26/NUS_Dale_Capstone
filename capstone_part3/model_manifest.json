@@ -1,0 +1,25 @@
+{
+  "selected_by": "minimum validation MAE",
+  "model": "forest_regression",
+  "version": "v1",
+  "features": [
+    "hour",
+    "day_of_week",
+    "month",
+    "weekend",
+    "hour_sin",
+    "hour_cos",
+    "day_of_week_sin",
+    "day_of_week_cos",
+    "temp",
+    "rain_1h",
+    "snow_1h",
+    "clouds_all",
+    "holiday_flag",
+    "is_low_visibility",
+    "severe_weather",
+    "weather_main"
+  ],
+  "proxy_only": true,
+  "train_end": "2016-12-31"
+}

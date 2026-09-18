@@ -1,0 +1,11 @@
+Total Hours = DISTINCTCOUNT(Traffic[date_time])
+
+Average Traffic = AVERAGE(Traffic[traffic_volume])
+
+Average Temperature = AVERAGE(Traffic[Temperature Celsius])
+
+Daily Traffic 2015 to 2017 = CALCULATE([Average Traffic], KEEPFILTERS(Traffic[Year] >= 2015 && Traffic[Year] <= 2017))
+
+Hourly Traffic 2017 = CALCULATE([Average Traffic], Traffic[Year] = 2017)
+
+Average Raw Temperature = AVERAGE(Traffic[temp])

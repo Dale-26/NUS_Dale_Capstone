@@ -8,11 +8,11 @@ logger = logging.getLogger(__name__)
 EXPECTED = ['holiday','temp','rain_1h','snow_1h','clouds_all','weather_main','weather_description','date_time','traffic_volume']
 NUMERIC = ['temp','rain_1h','snow_1h','clouds_all','traffic_volume']
 
-def configure_logging(path, debug=False):
+def configure_logging(path, debug=False, mode="w"):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(level=logging.DEBUG if debug else logging.INFO,
         format='%(asctime)s %(levelname)s %(name)s %(message)s',
-        handlers=[logging.StreamHandler(), logging.FileHandler(path, mode='w')], force=True)
+        handlers=[logging.StreamHandler(), logging.FileHandler(path, mode=mode)], force=True)
     logging.getLogger('matplotlib').setLevel(logging.WARNING)
 
 def load_raw(path):

@@ -1,0 +1,2 @@
+ date_time  traffic_volume weather_main  temp_c
+2017-01-01          1848.0       Clouds    -3.4

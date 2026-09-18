@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "hourly",
+  "position": {
+    "x": 20,
+    "y": 460,
+    "z": 0,
+    "width": 450,
+    "height": 300
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Traffic"
+                    }
+                  },
+                  "Property": "Hour"
+                }
+              },
+              "queryRef": "Traffic.Hour"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Traffic"
+                    }
+                  },
+                  "Property": "Hourly Traffic 2017"
+                }
+              },
+              "queryRef": "Traffic.Hourly Traffic 2017"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Hourly average traffic in 2017'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

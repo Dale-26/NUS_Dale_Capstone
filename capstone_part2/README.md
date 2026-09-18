@@ -1,4 +1,4 @@
-# NUS_Dale_Capstone
+# Smart City Traffic Intelligence
 
 Capstone portfolio covering SQL analytics, a logged Python pipeline, machine learning, explainability and a local deployment simulation. The supplied Metro Interstate dataset contains **48,204 records and 40,575 distinct hours**. No actual accident dataset was provided: the classifier learns a documented **proxy label**, not accident probabilities.
 

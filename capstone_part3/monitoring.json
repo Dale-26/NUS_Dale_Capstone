@@ -1,0 +1,26 @@
+{
+  "observed_test": {
+    "status": "PASS",
+    "mae": 228.61603244641978,
+    "reference_validation_mae": 238.84076069357644,
+    "mae_threshold": 298.55095086697054,
+    "ks_statistics": {
+      "temp": 0.12512880167892115,
+      "hour": 0.00375776048490703,
+      "clouds_all": 0.1006482291392134
+    },
+    "ks_threshold": 0.2
+  },
+  "synthetic_error_stress": {
+    "status": "ALERT",
+    "mae": 2987.2601554395833,
+    "reference_validation_mae": 238.84076069357644,
+    "mae_threshold": 298.55095086697054,
+    "ks_statistics": {
+      "temp": 0.12512880167892115,
+      "hour": 0.00375776048490703,
+      "clouds_all": 0.1006482291392134
+    },
+    "ks_threshold": 0.2
+  }
+}

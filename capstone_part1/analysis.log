@@ -1,0 +1,5 @@
+2026-09-18 15:15:40,287 INFO capstone_part2.pipeline Loaded 48204 rows and 9 columns; schema validated
+2026-09-18 15:15:40,481 INFO __main__ Saved SQL result annual_raw (6 rows)
+2026-09-18 15:15:40,483 INFO __main__ Saved SQL result holiday_temperatures (5 rows)
+2026-09-18 15:15:40,492 INFO __main__ Saved SQL result annual_hourly (7 rows)
+2026-09-18 15:15:40,507 INFO __main__ Saved statistics, probabilities and weather summaries

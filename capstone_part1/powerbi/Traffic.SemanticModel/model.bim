@@ -1,0 +1,160 @@
+{
+  "name": "Traffic",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DataFile",
+        "kind": "m",
+        "expression": "\"C:\\capstone\\data\\Metro_Interstate_Traffic_Volume.csv\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "Traffic",
+        "columns": [
+          {
+            "name": "holiday",
+            "dataType": "string",
+            "sourceColumn": "holiday",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "temp",
+            "dataType": "double",
+            "sourceColumn": "temp",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "rain_1h",
+            "dataType": "double",
+            "sourceColumn": "rain_1h",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "snow_1h",
+            "dataType": "double",
+            "sourceColumn": "snow_1h",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "clouds_all",
+            "dataType": "int64",
+            "sourceColumn": "clouds_all",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "weather_main",
+            "dataType": "string",
+            "sourceColumn": "weather_main",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weather_description",
+            "dataType": "string",
+            "sourceColumn": "weather_description",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "date_time",
+            "dataType": "dateTime",
+            "sourceColumn": "date_time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "traffic_volume",
+            "dataType": "int64",
+            "sourceColumn": "traffic_volume",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Hour",
+            "dataType": "int64",
+            "sourceColumn": "Hour",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Temperature Celsius",
+            "dataType": "double",
+            "sourceColumn": "Temperature Celsius",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Traffic Category",
+            "dataType": "string",
+            "sourceColumn": "Traffic Category",
+            "summarizeBy": "none"
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Hours",
+            "expression": "DISTINCTCOUNT(Traffic[date_time])",
+            "formatString": "#,0.0"
+          },
+          {
+            "name": "Average Traffic",
+            "expression": "AVERAGE(Traffic[traffic_volume])",
+            "formatString": "#,0.0"
+          },
+          {
+            "name": "Average Temperature",
+            "expression": "AVERAGE(Traffic[Temperature Celsius])",
+            "formatString": "#,0.0"
+          },
+          {
+            "name": "Daily Traffic 2015 to 2017",
+            "expression": "CALCULATE([Average Traffic], KEEPFILTERS(Traffic[Year] >= 2015 && Traffic[Year] <= 2017))",
+            "formatString": "#,0.0"
+          },
+          {
+            "name": "Hourly Traffic 2017",
+            "expression": "CALCULATE([Average Traffic], Traffic[Year] = 2017)",
+            "formatString": "#,0.0"
+          },
+          {
+            "name": "Average Raw Temperature",
+            "expression": "AVERAGE(Traffic[temp])",
+            "formatString": "#,0.0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Traffic",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFile),[Delimiter=\",\", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers,{{\"holiday\", type text},{\"temp\", type number},{\"rain_1h\", type number},{\"snow_1h\", type number},{\"clouds_all\", Int64.Type},{\"weather_main\", type text},{\"weather_description\", type text},{\"date_time\", type datetime},{\"traffic_volume\", Int64.Type}},\"en-US\"),",
+                "    AddHour = Table.AddColumn(Typed,\"Hour\",each Time.Hour(DateTime.Time([date_time])),Int64.Type),",
+                "    AddDate = Table.AddColumn(AddHour,\"Date\",each Date.From([date_time]),type date),",
+                "    AddYear = Table.AddColumn(AddDate,\"Year\",each Date.Year([date_time]),Int64.Type),",
+                "    AddCelsius = Table.AddColumn(AddYear,\"Temperature Celsius\",each if [temp] < 200 or [temp] > 330 then null else [temp]-273.15,type number),",
+                "    Category = Table.AddColumn(AddCelsius,\"Traffic Category\",each if [traffic_volume]<4500 then \"Low\" else if [traffic_volume]<=5500 then \"Medium\" else \"High\",type text)",
+                "in",
+                "    Category"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

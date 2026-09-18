@@ -1,0 +1,30 @@
+{
+  "quartiles": [
+    1204.0,
+    3339.0,
+    4932.0
+  ],
+  "scales": {
+    "temp": [
+      280.9405543053417,
+      13.155323502962863
+    ],
+    "clouds_all": [
+      45.43858817955703,
+      38.484418750615134
+    ]
+  },
+  "weather_categories": [
+    "Clear",
+    "Clouds",
+    "Drizzle",
+    "Fog",
+    "Haze",
+    "Mist",
+    "Rain",
+    "Smoke",
+    "Snow",
+    "Squall",
+    "Thunderstorm"
+  ]
+}

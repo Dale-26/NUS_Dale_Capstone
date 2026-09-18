@@ -1,0 +1,1 @@
+For a weekday journey in Clear weather, consider 21:00–22:00. Historical mean is 2744 vehicles/hour from 424 observations, the lowest supported mean within 06:00–22:00. This is a single-corridor timing suggestion, not a route, travel-time or safety guarantee.

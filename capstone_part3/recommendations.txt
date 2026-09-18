@@ -1,0 +1,5 @@
+For a weekday journey in Clear weather, consider 21:00–22:00. Historical mean is 2721 vehicles/hour from 278 observations, the lowest supported mean within 06:00–22:00. This is a single-corridor timing suggestion, not a route, travel-time or safety guarantee.
+
+For a weekend journey in Clear weather, consider 06:00–07:00. Historical mean is 1096 vehicles/hour from 96 observations, the lowest supported mean within 06:00–22:00. This is a single-corridor timing suggestion, not a route, travel-time or safety guarantee.
+
+For a weekday journey in Rain weather, consider 21:00–22:00. Historical mean is 2579 vehicles/hour from 72 observations, the lowest supported mean within 06:00–22:00. This is a single-corridor timing suggestion, not a route, travel-time or safety guarantee.

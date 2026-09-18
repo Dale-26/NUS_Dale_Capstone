@@ -8,7 +8,7 @@ def run():
     with sqlite3.connect(out/'traffic.sqlite') as con:
         raw.to_sql('traffic_raw',con,if_exists='replace',index=False);h.to_sql('traffic_hourly',con,if_exists='replace',index=False)
         assert con.execute('SELECT COUNT(*) FROM traffic_raw').fetchone()[0]==len(raw)
-        queries=(out/'analysis.sql').read_text().split(';')
+        queries='\n'.join(line for line in (out/'analysis.sql').read_text().splitlines() if not line.lstrip().startswith('--')).split(';')
         for q,name in zip(queries,['annual_raw','holiday_temperatures','annual_hourly']):
             result=pd.read_sql_query(q,con);result.to_csv(out/(name+'.csv'),index=False)
             logger.info('Saved SQL result %s (%s rows)',name,len(result))

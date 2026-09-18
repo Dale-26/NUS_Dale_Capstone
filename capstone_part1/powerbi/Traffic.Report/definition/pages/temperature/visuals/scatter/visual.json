@@ -1,0 +1,91 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "scatter",
+  "position": {
+    "x": 20,
+    "y": 20,
+    "z": 0,
+    "width": 930,
+    "height": 730
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Traffic"
+                    }
+                  },
+                  "Property": "date_time"
+                }
+              },
+              "queryRef": "Traffic.date_time"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Traffic"
+                    }
+                  },
+                  "Property": "Average Raw Temperature"
+                }
+              },
+              "queryRef": "Traffic.Average Raw Temperature"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Traffic"
+                    }
+                  },
+                  "Property": "Average Traffic"
+                }
+              },
+              "queryRef": "Traffic.Average Traffic"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Temperature Kelvin versus traffic volume'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

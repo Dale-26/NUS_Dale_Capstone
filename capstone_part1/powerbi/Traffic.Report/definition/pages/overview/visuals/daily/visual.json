@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "daily",
+  "position": {
+    "x": 20,
+    "y": 140,
+    "z": 0,
+    "width": 920,
+    "height": 290
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Traffic"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "queryRef": "Traffic.Date"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Traffic"
+                    }
+                  },
+                  "Property": "Daily Traffic 2015 to 2017"
+                }
+              },
+              "queryRef": "Traffic.Daily Traffic 2015 to 2017"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Daily average traffic 2015 to 2017'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
